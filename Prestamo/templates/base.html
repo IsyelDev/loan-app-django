@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Mi sitio{% endblock  %}</title>
+    <link rel="stylesheet" href={% static "estilo.css" %}>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <a href={% url "bienvenido" %}>Inicio </a>
+        <a href={% url "about" %}>Acerca de </a>
+    </header>
+
+    <main>
+       {% block content %}
+       {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy: 2025 Mi site web</p>
+    </footer>
+    <script src={% static "script.js" %}></script>
+  </body>
+</html>
